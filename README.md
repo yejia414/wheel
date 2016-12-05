@@ -32,3 +32,4 @@ wheelTemp.onRightChildClick = function(d) {
   // console.log(d);
 }
 ``` 
+[查看示例](http://htmlpreview.github.io/?https://github.com/yejia414/wheel/blob/master/index.html)
