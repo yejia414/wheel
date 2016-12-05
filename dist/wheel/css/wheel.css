@@ -1,0 +1,43 @@
+.wheel_svg {
+  /*background: rgba(0, 0, 0, .3);*/
+}
+.wheel_svg line {
+  stroke:#80879e;
+  stroke-width:0.5;
+}
+.wheel_svg .bubble text {
+  font-size: 12px;
+  font-weight: bold;
+  text-anchor: middle;
+  fill:#ffffff;
+}
+.wheel_svg .bubble.root.left {
+  fill:#8f8f8f;
+}
+.wheel_svg .bubble.root.left text {
+  fill:#000000;
+  font-size:14px;
+}
+.wheel_svg .bubble.child {
+  cursor: pointer;
+}
+.wheel_svg .bubble.root,.wheel_svg .bubble.child.left.actived {
+  cursor: default;
+}
+.wheel_svg .bubble.child circle {
+  fill:rgba(91, 194, 244, .38);
+  stroke:#ffffff;
+  stroke-width:0.5;
+}
+.wheel_svg .bubble.child.left.actived circle,.wheel_svg .bubble.root.right circle {
+  fill:#ffc700;
+  stroke:rgba(155, 155, 155, .4);
+  stroke-width: 6;
+}
+.wheel_svg .bubble.child.left.actived text,.wheel_svg .bubble.root.right text{
+  fill:#000000;
+}
+.wheel_svg .dashedLine {
+  stroke:#ffffff;
+  stroke-width:1;
+}

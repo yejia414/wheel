@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>svg test</title>
+  <script src="http://cdn.bootcss.com/d3/4.4.0/d3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./dist/wheel/css/wheel.css"></link>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #wheel {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wheel" />
+  <script src="./dist/wheel/js/wheel.js"></script>
+  <script>
+      function GetRandomNum(Min,Max) {   
+        var Range = Max - Min;   
+        var Rand = Math.random();   
+        return(Min + Math.round(Rand * Range));   
+      }   
+      var children = [];
+      for(var i = 0; i<10; i++) {
+        var childrenTemp = [];
+        for(var j = 0; j<GetRandomNum(3, 20); j++ ) {
+          childrenTemp.push({id:`item${i}${j}`, name:`节点${i}的子${j}`});
+        }
+        children.push({id:`item${i}`, name:`节点${i}`, children:childrenTemp});
+      }
+      var root = {
+        id:'430002',
+        name:'中科软',
+        children:children
+      };
+
+      var wheelTemp = window.wheel("wheel");
+      wheelTemp.initWheel(root);
+      wheelTemp.onLeftChildClick = function(d) {
+        // console.log('left');
+        // console.log(d);
+      }
+      wheelTemp.onRightChildClick = function(d) {
+        // console.log('right');
+        // console.log(d);
+      }
+    </script>
+</body>
+
+</html>
