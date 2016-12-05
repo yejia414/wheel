@@ -56,15 +56,15 @@ const layoutBubble = (bubble, clazz, isRotate) => {
 const appendLine = (svg, lineList, clazz) => {
   const line = svg.selectAll(`.arrowLine.line.${clazz}`).data(lineList).enter().append('line');
   line.attr("class", d => `arrowLine line ${clazz}` );
-  // line.attr('marker-end', "url(#markerArrow)");
+  line.attr('marker-end', "url(#markerArrow)");
   layoutLine(line);
 }
 const layoutLine = line => {
   line.attr('x1', (d, i) => (d.target.center.x + Math.cos(getAngle(d.target)) * opts.itemRadius));
   line.attr('y1', (d, i) => (d.target.center.y + Math.sin(getAngle(d.target)) * opts.itemRadius));
   //若加上箭头，则应再减5
-  line.attr('x2', (d, i) => (d.target.center.x + Math.cos(getAngle(d.target)) * (opts.wheelRadius - opts.itemRadius)));
-  line.attr('y2', (d, i) => (d.target.center.y + Math.sin(getAngle(d.target)) * (opts.wheelRadius - opts.itemRadius)));
+  line.attr('x2', (d, i) => (d.target.center.x + Math.cos(getAngle(d.target)) * (opts.wheelRadius - opts.itemRadius - 5)));
+  line.attr('y2', (d, i) => (d.target.center.y + Math.sin(getAngle(d.target)) * (opts.wheelRadius - opts.itemRadius - 5)));
 }
 const getAngle = d => {
   const avgAngle = 2 * Math.PI / d.size;

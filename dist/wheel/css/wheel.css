@@ -3,7 +3,7 @@
 }
 .wheel_svg line {
   stroke:#80879e;
-  stroke-width:0.5;
+  stroke-width:1;
 }
 .wheel_svg .bubble text {
   font-size: 12px;
